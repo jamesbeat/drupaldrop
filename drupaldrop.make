@@ -34,7 +34,7 @@ projects[multiple_node_menu][subdir] = menu_modules
 projects[views][subdir] = views_modules
 projects[views_bulk_operations][subdir] = views_modules
 projects[views_php][subdir] = views_modules
-projects[views_slideshow][subdir] = views_modules
+;projects[views_slideshow][subdir] = views_modules
 
 ;Registration
 projects[registration][subdir] = registration_modules
