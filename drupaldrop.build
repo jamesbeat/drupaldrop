@@ -4,5 +4,5 @@ projects[drupal][type] = "core"
 ; Distribution
 projects[drupaldrop][type] = "profile"
 projects[drupaldrop][download][type] = "git"
-projects[drupaldrop][download][url] = "git@gitserver.com:drupaldrop.git"
+projects[drupaldrop][download][url] = "https://github.com/jamesbeat/drupaldrop.git"
 projects[drupaldrop][download][branch] = "master"
