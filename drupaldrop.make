@@ -1,6 +1,6 @@
 core = 7.x
 api = 2
-projects[][subdir] = custom = "drupal"
+projects[] = drupal
 
 ;Common modules.
 projects[ctools][subdir] = common_modules
