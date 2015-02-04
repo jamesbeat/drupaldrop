@@ -3,8 +3,6 @@ api = 2
 
 ;Common modules.
 
-
-projects[] =  views
 projects[] = ctools
 projects[] = ds
 projects[] = entity
