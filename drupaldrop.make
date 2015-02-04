@@ -29,7 +29,6 @@ projects[] = ace_editor
 ;Menu Modules
 projects[] = menu_attributes
 projects[] = menu_position
-projects[] = menu_views
 projects[] = multiple_node_menu
 
 ;Views
@@ -61,7 +60,6 @@ projects[] = devel
 
 ; Multilingual modules.
 projects[] = fallback_language_negotation
-projects[] = variable
 projects[] = i18n
 projects[] = i18nviews
 projects[] = l10n_update
