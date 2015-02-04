@@ -1,72 +1,74 @@
 core = 7.x
 api = 2
+projects[][subdir] = custom = "drupal"
 
 ;Common modules.
-
-projects[] = ctools
-projects[] = ds
-projects[] = entity
-projects[] = jquery_update
-projects[] = libraries
-projects[] = rules
-projects[] = token
-projects[] = variable
+projects[ctools][subdir] = common_modules
+projects[ds][subdir] = common_modules
+projects[entity][subdir] = common_modules
+projects[jquery_update][subdir] = common_modules
+projects[libraries][subdir] = common_modules
+projects[rules][subdir] = common_modules
+projects[token][subdir] = common_modules
+projects[variable][subdir] = common_modules
 
 ;Content Modules
-projects[] = content_access
-projects[] = blockify
-projects[] = exclude_node_title
-projects[] = field_group
-projects[] = image_style_quality
-projects[] = insert
-projects[] = insert_block
-projects[] = references
-projects[] = tablefield
-projects[] = ace_editor
+projects[content_access][subdir] = content_modules
+projects[blockify][subdir] = content_modules
+projects[exclude_node_title][subdir] = content_modules
+projects[field_group][subdir] = content_modules
+projects[image_style_quality][subdir] = content_modules
+projects[insert][subdir] = content_modules
+projects[insert_block][subdir] = content_modules
+projects[references][subdir] = content_modules
+projects[tablefield][subdir] = content_modules
+projects[ace_editor][subdir] = content_modules
 
 ;Menu Modules
-projects[] = menu_attributes
-projects[] = menu_position
-projects[] = multiple_node_menu
+projects[menu_attributes][subdir] = menu_modules
+projects[menu_position][subdir] = menu_modules
+projects[menu_views][subdir] = menu_modules
+projects[multiple_node_menu][subdir] = menu_modules
 
 ;Views
-projects[] = views
-projects[] = views_bulk_operations
-projects[] = views_php
-projects[] = views_Slideshow
+projects[views][subdir] = views_modules
+projects[views_bulk_operations][subdir] = views_modules
+projects[views_php][subdir] = views_modules
+projects[views_Slideshow][subdir] = views_modules
 
 ;Registration
-projects[] = registration
-projects[] = calendar
-projects[] = date
-projects[] = location
+projects[registration][subdir] = registration_modules
+projects[calendar][subdir] = registration_modules
+projects[date][subdir] = registration_modules
+projects[location][subdir] = registration_modules
 
 ;Email
-projects[] = mailsystem
-projects[] = smtp
-projects[] = htmlmail
-projects[] = mimemail
+projects[mailsystem][subdir] = mail_modules
+projects[smtp][subdir] = mail_modules
+projects[htmlmail][subdir] = mail_modules
+projects[mimemail][subdir] = mail_modules
 
 ;Admin Modules
-projects[] = admin_menu
-projects[] = backup_migrate
-projects[] = module_filter
-projects[] = google_analytics
+projects[admin_menu][subdir] = admin_modules
+projects[backup_migrate][subdir] = admin_modules
+projects[module_filter][subdir] = admin_modules
+projects[google_analytics][subdir] = admin_modules
 
 ; Development modules.
-projects[] = devel
+projects[devel][subdir] = dev_modules
 
 ; Multilingual modules.
-projects[] = fallback_language_negotation
-projects[] = i18n
-projects[] = i18nviews
-projects[] = l10n_update
-projects[] = language_switcher
+projects[fallback_language_negotation][subdir] = language_modules
+projects[i18n][subdir] = language_modules
+projects[i18nviews][subdir] = language_modules
+projects[l10n_update][subdir] = language_modules
+projects[language_switcher][subdir] = language_modules
 
 
 ; THEMES
-projects[] = ember
-projects[] = basic
+
+projects[ember]
+projects[basic]
 
 ;Libraries
 libraries[ace][download][type] = file
