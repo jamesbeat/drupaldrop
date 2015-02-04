@@ -34,7 +34,7 @@ projects[multiple_node_menu][subdir] = menu_modules
 projects[views][subdir] = views_modules
 projects[views_bulk_operations][subdir] = views_modules
 projects[views_php][subdir] = views_modules
-;projects[views_slideshow][subdir] = views_modules
+projects[views_slideshow][subdir] = views_modules
 
 ;Registration
 projects[registration][subdir] = registration_modules
@@ -53,9 +53,8 @@ projects[admin_menu][subdir] = admin_modules
 projects[backup_migrate][subdir] = admin_modules
 projects[module_filter][subdir] = admin_modules
 projects[google_analytics][subdir] = admin_modules
-
-; Development modules.
-projects[devel][subdir] = dev_modules
+projects[security_review][subdir] = admin_modules
+projects[devel][subdir] = admin_modules
 
 ; Multilingual modules.
 projects[fallback_language_negotation][subdir] = language_modules
@@ -67,7 +66,6 @@ projects[language_switcher][subdir] = language_modules
 
 ; THEMES
 
-projects[ember]
 projects[basic]
 
 ;Libraries

@@ -1,0 +1,29 @@
+<?php
+function drupaldrop_install() {
+  // Set the administration theme 
+  // variable_set('admin_theme', 'ember');
+  variable_set('theme_default', 'basic');
+  variable_set("clean_url", 0);
+  
+	variable_set("date_default_timezone", 'Europe/Berlin');
+	variable_set("date_first_day", '1');
+	variable_set("date_format_long", 'l, d. M. Y');
+	variable_set("date_format_medium", 'd. M. Y');
+	variable_set("date_format_short", 'd.m.Y');
+	variable_set("date_format_time", 'H:i');
+	
+	variable_set("jquery_update_compression_type", 'min');
+	variable_set("jquery_update_jquery_admin_version", 'default');
+	variable_set("jquery_update_jquery_cdn", 'none');
+	variable_set("jquery_update_jquery_version", '1.10');
+	
+	variable_set("site_default_country", 'DE');
+	
+	variable_set("site_403", '');
+	variable_set("site_404", '');
+	
+	variable_set("user_register", 0);
+
+}
+
+?>
