@@ -7,6 +7,19 @@ dependencies[] = color
 dependencies[] = comment
 dependencies[] = contextual
 dependencies[] = dashboard
+dependencies[] = update
+dependencies[] = node
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = number
+dependencies[] = path
+dependencies[] = syslog
+dependencies[] = dblog
+dependencies[] = ds_ui
+dependencies[] = ds_extras
+dependencies[] = node_reference
+dependencies[] = user_reference
 
 dependencies[] = ctools
 dependencies[] = ds
@@ -14,6 +27,7 @@ dependencies[] = entity
 dependencies[] = jquery_update
 dependencies[] = libraries
 dependencies[] = rules
+dependencies[] = rules_admin
 dependencies[] = token
 dependencies[] = variable
 
@@ -43,6 +57,9 @@ dependencies[] = views_php
 
 ;Registration
 dependencies[] = registration
+dependencies[] = registration_views
+dependencies[] = registration_waitlist
+dependencies[] = registration_entity_access
 dependencies[] = calendar
 dependencies[] = date
 dependencies[] = location

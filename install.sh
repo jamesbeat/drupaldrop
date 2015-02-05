@@ -62,9 +62,8 @@ $DRUSH language-add $siteLocale -y
 $DRUSH language-enable $siteLocale -y
 $DRUSH language-default $siteLocale -y
 
-$ECHO "-------------- UPDATES -----------------" 
+$ECHO "-------------- CRON -----------------" 
 $DRUSH cron
-$DRUSH up
 $DRUSH cc all
 
 $ECHO "-------------- YOUR NEW SITE -----------------" 
