@@ -52,5 +52,14 @@ $DRUSH make drupaldrop.build -y
 
 $ECHO "--------------INSTALLING DRUPALDROP -----------------" 
 
-$DRUSH site-install -y drupaldrop --account-mail=$userMail --account-name=$userName --account-pass=$userPass --site-name=$siteName --site-mail=$userMail --locale=$siteLocale --db-url=mysql://$dbUser:$dbPass@$MyHOST:3306/$dbName install_configure_form.update_status_module='array(FALSE,FALSE)' --debug 
+$DRUSH site-install -y drupaldrop --account-mail=$userMail --account-name=$userName --account-pass=$userPass --site-name=$siteName --site-mail=$userMail --locale=$siteLocale --db-url=mysql://$dbUser:$dbPass@$MyHOST:3306/$dbName  --db-su=$MyUSER --db-su-pw=$MyPASS install_configure_form.update_status_module='array(FALSE,FALSE)' --debug 
 
+$ECHO "-------------- LOCALIZATION -----------------" 
+
+$DRUSH dl drush_language -y
+$DRUSH language-add $siteLocale -y
+$DRUSH language-enable $siteLocale -y
+$DRUSH language-default $siteLocale -y
+
+$ECHO "-------------- THE END -----------------" 
+$DRUSH status

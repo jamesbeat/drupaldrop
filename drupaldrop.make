@@ -64,8 +64,7 @@ projects[language_switcher][subdir] = language_modules
 
 
 ; THEMES
-
-projects[basic]
+projects[ember]
 
 ;Libraries
 libraries[ace][download][type] = file

@@ -2,7 +2,7 @@
 function drupaldrop_install() {
   // Set the administration theme 
   // variable_set('admin_theme', 'ember');
-  variable_set('theme_default', 'basic');
+  //variable_set('theme_default', 'basic');
   variable_set("clean_url", 0);
   
 	variable_set("date_default_timezone", 'Europe/Berlin');
