@@ -2,6 +2,9 @@ core = 7.x
 api = 2
 projects[] = drupal
 
+
+Google_analytics, Fallback_language_negotation, Drop
+
 ;Common modules.
 projects[ctools][subdir] = common_modules
 projects[ds][subdir] = common_modules
@@ -56,7 +59,6 @@ projects[security_review][subdir] = admin_modules
 projects[devel][subdir] = admin_modules
 
 ; Multilingual modules.
-projects[fallback_language_negotation][subdir] = language_modules
 projects[i18n][subdir] = language_modules
 projects[i18nviews][subdir] = language_modules
 projects[l10n_update][subdir] = language_modules

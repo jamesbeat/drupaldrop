@@ -57,18 +57,12 @@ dependencies[] = mimemail
 dependencies[] = admin_menu
 dependencies[] = backup_migrate
 dependencies[] = module_filter
-dependencies[] = google_analytics
 dependencies[] = security_review
 dependencies[] = devel
 
 ; Multilingual modules.
-dependencies[] = fallback_language_negotation
 dependencies[] = i18n
 dependencies[] = i18nviews
 dependencies[] = l10n_update
 dependencies[] = language_switcher
-
-
-; THEMES
-dependencies[] = drop
 
