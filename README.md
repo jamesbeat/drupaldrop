@@ -54,6 +54,10 @@ Copy *drupaldrop.build*, *drupaldrop.make*, *install.sh* and *install-example.co
 Rename *install-example.config* to *install.config* and edit the settings to match your system environment.
 
 Open up Terminal and enable Root User: *sudo -s*
+cd to the Site directory
+run sh install.sh
+
+Get a coffe 
 
 
 
