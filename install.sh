@@ -61,5 +61,25 @@ $DRUSH language-add $siteLocale -y
 $DRUSH language-enable $siteLocale -y
 $DRUSH language-default $siteLocale -y
 
-$ECHO "-------------- THE END -----------------" 
+$ECHO "-------------- CLEANUP -----------------" 
+rm –f INSTALL.mysql.txt
+rm –f INSTALL.pgsql.txt
+rm –f INSTALL.sqlite.txt
+rm –f INSTALL.txt
+rm –f LICENSE.txt
+rm –f MAINTAINERS.txt
+rm –f UPGRADE.txt
+rm –f README.txt
+rm –f install.config
+rm –f install.sh
+rm –f drupaldrop.make
+
+$ECHO "-------------- YOUR NEW SITE -----------------" 
 $DRUSH status
+
+$ECHO "-------------- YOUR KEYS  -----------------" 
+$DRUSH uli
+
+
+
+
