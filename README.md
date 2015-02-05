@@ -50,7 +50,7 @@ export PATH
 ## Usage
 
 Create a new directory for the site
-Copy *drupaldrop.build*, *drupaldrop.make*, *install.sh* and *install-example.config* in that folder
+Copy *drupaldrop.build*, *install.sh* and *install-example.config* in that folder
 Rename *install-example.config* to *install.config* and edit the settings to match your system environment.
 
 Open up Terminal and enable Root User: *sudo -s*

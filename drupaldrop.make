@@ -73,8 +73,8 @@ libraries[ace][download][url] = https://github.com/ajaxorg/ace-builds/archive/ma
 libraries[jquery.cycle][download][type] = file
 libraries[jquery.cycle][download][url] = http://malsup.github.io/jquery.cycle.all.js
 
-libraries[modernizr][download][type] = file
-libraries[modernizr][download][url] = http://modernizr.com/downloads/modernizr-latest.js
+; libraries[modernizr][download][type] = file
+; libraries[modernizr][download][url] = http://modernizr.com/downloads/modernizr-latest.js
 
 libraries[emogrifier][download][type] = file
 libraries[emogrifier][download][url] = https://github.com/jjriv/emogrifier/archive/master.zip

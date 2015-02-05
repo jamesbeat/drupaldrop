@@ -23,11 +23,12 @@ $ECHO "-----------------------------------------"
 $ECHO "*"
 $ECHO "Hello. This Script will setup a D7 Drupaldrop Installation in the current dir"
 $ECHO "*"
-$ECHO "--------------BASIC INFO-----------------"
+$ECHO "-------------- BASIC INFO -----------------"
 
 read -e -p "Enter Site Name: " siteName
+read -e -p "Enter Site Directory Name: " dirName
 
-$ECHO "--------------DATABASE-----------------"
+$ECHO "-------------- DATABASE -----------------"
 read -e -p "Enter Database Name: " dbName
 read -e -p "Enter Database User: " dbUser
 read -e -p "Enter Database Pass: " dbPass
@@ -40,13 +41,13 @@ $MySQL mysql -u $MyUSER -h $MyHOST -p$MyPASS -Bse "FLUSH PRIVILEGES;"
 
 $ECHO "Database $dbName was created with User $dbUser and Pass $dbPass" 
 
-$ECHO "--------------DRUPAL SETUP-----------------"
+$ECHO "-------------- DRUPAL SETUP -----------------"
 read -e -p "Enter Admin Username: " userName
 read -e -p "Enter Admin Password: " userPass
 read -e -p "Enter Admin E-Mail: " userMail
 read -e -p "Site Locale (Format: de, en etc.): " siteLocale
 
-$ECHO "--------------MAKE DISTRIBUTION-----------------"
+$ECHO "-------------- MAKE DISTRIBUTION -----------------"
 
 $DRUSH make drupaldrop.build -y
 
@@ -61,24 +62,22 @@ $DRUSH language-add $siteLocale -y
 $DRUSH language-enable $siteLocale -y
 $DRUSH language-default $siteLocale -y
 
-$ECHO "-------------- CLEANUP -----------------" 
-rm –f INSTALL.mysql.txt
-rm –f INSTALL.pgsql.txt
-rm –f INSTALL.sqlite.txt
-rm –f INSTALL.txt
-rm –f LICENSE.txt
-rm –f MAINTAINERS.txt
-rm –f UPGRADE.txt
-rm –f README.txt
-rm –f install.config
-rm –f install.sh
-rm –f drupaldrop.make
+$ECHO "-------------- UPDATES -----------------" 
+$DRUSH cron
+$DRUSH up
+$DRUSH cc all
 
 $ECHO "-------------- YOUR NEW SITE -----------------" 
+
 $DRUSH status
 
 $ECHO "-------------- YOUR KEYS  -----------------" 
-$DRUSH uli
+$DRUSH uli --uri=http://$MyHOST/$dirName
+
+$ECHO "-------------- CLEANUP -----------------" 
+rm –f INSTALL.mysql.txt INSTALL.pgsql.txt INSTALL.sqlite.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt UPGRADE.txt README.txt install.config install.sh drupaldrop.make
+
+
 
 
 

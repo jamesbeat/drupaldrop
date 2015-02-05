@@ -1,3 +1,74 @@
 name = Drupal Drop
 description = Advanced.
 core = 7.x
+
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+
+dependencies[] = ctools
+dependencies[] = ds
+dependencies[] = entity
+dependencies[] = jquery_update
+dependencies[] = libraries
+dependencies[] = rules
+dependencies[] = token
+dependencies[] = variable
+
+;Content Modules
+dependencies[] = content_access
+dependencies[] = blockify
+dependencies[] = exclude_node_title
+dependencies[] = field_group
+dependencies[] = image_style_quality
+dependencies[] = insert
+dependencies[] = insert_block
+dependencies[] = references
+dependencies[] = tablefield
+dependencies[] = ace_editor
+
+;Menu Modules
+dependencies[] = menu_attributes
+dependencies[] = menu_position
+dependencies[] = menu_views
+dependencies[] = multiple_node_menu
+
+;Views
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = views_bulk_operations
+dependencies[] = views_php
+
+;Registration
+dependencies[] = registration
+dependencies[] = calendar
+dependencies[] = date
+dependencies[] = location
+
+;Email
+dependencies[] = mailsystem
+dependencies[] = smtp
+dependencies[] = htmlmail
+dependencies[] = mimemail
+
+;Admin Modules
+dependencies[] = admin_menu
+dependencies[] = backup_migrate
+dependencies[] = module_filter
+dependencies[] = google_analytics
+dependencies[] = security_review
+dependencies[] = devel
+
+; Multilingual modules.
+dependencies[] = fallback_language_negotation
+dependencies[] = i18n
+dependencies[] = i18nviews
+dependencies[] = l10n_update
+dependencies[] = language_switcher
+
+
+; THEMES
+dependencies[] = drop
+
