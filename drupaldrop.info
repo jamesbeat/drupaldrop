@@ -21,6 +21,7 @@ dependencies[] = ds_extras
 dependencies[] = node_reference
 dependencies[] = user_reference
 dependencies[] = rdf
+dependencies[] = taxonomy
 
 dependencies[] = ctools
 dependencies[] = ds
