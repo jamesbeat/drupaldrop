@@ -1,8 +1,8 @@
-# drupaldrop – quick local Drupal setup for OSX
+# drupaldrop – quick local Drupal setup
 
 ## What?
 
-This is a version controlled [Drupal 7](http://www.drupal.org) installation profile that can be installed on your local Machine.
+This is a version controlled [Drupal 7](http://www.drupal.org) installation profile that can be installed on your local OSX Machine.
 
 ## Why?
 
@@ -10,16 +10,16 @@ Because boring and repeating tasks should be handled by computers. No need to ma
 
 ## How?
 
-Using [drush](http://www.drush.org/), [xampp](https://www.apachefriends.org/index.html) and the command line terminal. (See *Preparations* for detailed Info)
+Using [drush](http://www.drush.org/), [XAMPP](https://www.apachefriends.org/index.html) and the command line terminal. (See *Preparations* for detailed Info)
 
 Assuming you already have XAMPP and drush setup and running:
 
 1. Create a new directory for the site in your local *Sites* folder
 2. Copy *drupaldrop.build*, *install.sh* and *install-example.config* in that folder
 3. Rename *install-example.config* to *install.config* and edit the settings inside this file to match your system environment.
-4. Open up Terminal and enable Root User: `$sudo -s`
+4. Open up Terminal and enable Root User: `$ sudo -s` (Discard the $ character, it's just a placeholder for the terminal prompt)
 5. cd to the Site directory (for exammple `cd Sites/sitename`)
-6. run the command `sh install.sh`
+6. run the command `$ sh install.sh`
 7. You will be asked to enter some basic credentials, keep your MySQL root username and password ready.
 8. The install script now creates a new MySQL user, Database, downloads latest Drupal core, builds an installation profile from this repo, downloads modules and translations, sets up basic content types and roles, enables a starter theme and logs you into the site. 
 9. Enjoy!
@@ -27,14 +27,14 @@ Assuming you already have XAMPP and drush setup and running:
 > Disclaimer: Use this at your own risk. Running shell scripts can potentially do some serious damage to your system.
 > Take the time and read through the install.sh file to see what it does exactly.
 
----
+
 
 ## Preparations
 
 ### Install XAMPP
 
 1. Install [XAMPP](https://www.apachefriends.org/index.html) on your local machine
-2. Make XAMPP a bit more secure, so only you cann access its databases
+2. Make XAMPP a bit more secure, so only you can access its databases
  
   in Terminal type:
   `$ sudo /Applications/XAMPP/xamppfiles/xampp security`
@@ -46,7 +46,7 @@ Assuming you already have XAMPP and drush setup and running:
  
  ```
   DocumentRoot "/Applications/XAMPP/xamppfiles/htdocs"
-    <Directory "/Applications/XAMPP/xamppfiles/htdocs">
+  <Directory "/Applications/XAMPP/xamppfiles/htdocs">
  ```
  
   to
@@ -142,7 +142,7 @@ Start by cloning this repo and make changes to the following files:
 
 *drupaldrop.info* This file sets up some basic drupal setings like user roles and content types.
 
-*themes/drop* This is a minimal theme based on *basic* theme, making use of *SASS* and *Bourbon Neat*
+*themes/drop* This is a minimal theme based on *basic* theme, making use of [SASS](http://sass-lang.com/) and  [Bourbon Neat](http://neat.bourbon.io/)
 
 
 
