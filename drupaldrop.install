@@ -503,7 +503,7 @@ function drupladrop_create_content($dir = 'content', $ext = 'content', $account 
     include $file->filename;
     ob_end_clean();
 
-	install_node_export_import_from_file($dir.'/'.$file->filename);
+	install_node_export_import_from_file($path.'/'.$dir.'/'.$file->filename);
     
     print "Node ".$file->filename." imported";
     
