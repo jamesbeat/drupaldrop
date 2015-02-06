@@ -62,9 +62,16 @@ $DRUSH language-add $siteLocale -y
 $DRUSH language-enable $siteLocale -y
 $DRUSH language-default $siteLocale -y
 
+$ECHO "-------------- CREATE PRIVATE FILES DIR -----------------" 
+mkdir -p sites/default/files/private
+chmod 700 sites/default/files/private
+
 $ECHO "-------------- CRON -----------------" 
 $DRUSH cron
 $DRUSH cc all
+
+$ECHO "-------------- REBUILD PERMISSIONS -----------------" 
+$DRUSH php-eval 'node_access_rebuild();'
 
 $ECHO "-------------- YOUR NEW SITE -----------------" 
 
