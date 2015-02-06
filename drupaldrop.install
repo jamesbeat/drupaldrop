@@ -67,6 +67,27 @@ function drupaldrop_install() {
   );
   $full_html_format = (object) $full_html_format;
   filter_format_save($full_html_format);
+  
+  // Add text formats.
+  $markdown_format = array(
+    'format' => 'markdown',
+    'name' => 'Markdown',
+    'weight' => 0,
+    'filters' => array(
+      'filter_markdown' => array( // Markdown filter.
+        'weight' => 0,
+        'status' => 1,
+      ),
+      'filter_url' => array( // URL filter.
+        'weight' => 1,
+        'status' => 1,
+      ),
+    ),
+  );
+  $markdown_format = (object) $markdown_format;
+  filter_format_save($markdown_format);
+     
+  
 
   // Enable some standard blocks.
   $default_theme = variable_get('theme_default', 'bartik');
@@ -257,22 +278,7 @@ function drupaldrop_install() {
     rdf_mapping_save($rdf_mapping);
   }
 
-  // Default "Basic page" to not be promoted and have comments disabled.
-  variable_set('node_options_page', array('status'));
-  variable_set('comment_page', COMMENT_NODE_HIDDEN);
-
-  // Don't display date and author information for "Basic page" nodes by default.
-  variable_set('node_submitted_page', FALSE);
-
-  // Enable user picture support and set the default to a square thumbnail option.
-  variable_set('user_pictures', '1');
-  variable_set('user_picture_dimensions', '1024x1024');
-  variable_set('user_picture_file_size', '800');
-  variable_set('user_picture_style', 'thumbnail');
-
-  // Allow visitor account creation with administrative approval.
-  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
-
+  
   // Create a default vocabulary named "Tags", enabled for the 'article' content type.
   $description = st('Use tags to group articles on similar topics into categories.');
   $vocabulary = (object) array(
@@ -409,6 +415,15 @@ function drupaldrop_install() {
   db_insert('users_roles')
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
+    
+    
+  //grant permission for text format markdown to admin
+  db_insert('role_permission')->fields(array(
+    'rid' => $admin_role->rid,
+    'permission' => 'use text format markdown',
+    'module' => 'filter'
+  ))->execute();
+  
 
   // Create a Home link in the main menu.
   $item = array(
@@ -427,6 +442,24 @@ function drupaldrop_install() {
     ->condition('type', 'theme')
     ->condition('name', 'seven')
     ->execute();
+ 
+ // Default "Basic page" to not be promoted and have comments disabled.
+  variable_set('node_options_page', array('status'));
+  variable_set('comment_page', COMMENT_NODE_HIDDEN);
+
+  // Don't display date and author information for "Basic page" nodes by default.
+  variable_set('node_submitted_page', FALSE);
+
+  // Enable user picture support and set the default to a square thumbnail option.
+  variable_set('user_pictures', '1');
+  variable_set('user_picture_dimensions', '1024x1024');
+  variable_set('user_picture_file_size', '800');
+  variable_set('user_picture_style', 'thumbnail');
+
+  // Allow visitor account creation with administrative approval.
+ variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
+
+ 
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
   
@@ -450,7 +483,6 @@ function drupaldrop_install() {
 	variable_set("site_403", '');
 	variable_set("site_404", '');
 	
-	variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
 	
 	variable_set('file_public_path', conf_path() . '/files');
 	variable_set('file_private_path', conf_path() . '/files/private');
@@ -463,11 +495,12 @@ function drupaldrop_install() {
 function drupladrop_create_content($dir = 'content', $ext = 'content', $account = NULL) {  
   $path = dirname(__FILE__);
   //$files = file_scan_directory($path . '/' . $dir, "\.${ext}$");
-  $files = file_scan_directory($path . '/' . $dir, '/\.${ext}$/');
+  //$files = file_scan_directory($path . '/' . $dir, '/\.${ext}$/');
   //$files = file_scan_directory($path . '/' . $dir, '/.*\.${ext}$/');
-  
+   $files = file_scan_directory($path . '/' . $dir, '/.*\.content$/');
    
-  
+   print "Files:";
+   print_r($files);
   
   asort($files);
 
