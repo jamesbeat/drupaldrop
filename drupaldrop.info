@@ -45,6 +45,7 @@ dependencies[] = references
 dependencies[] = tablefield
 dependencies[] = ace_editor
 dependencies[] = node_export
+dependencies[] = uuid
 
 ;Menu Modules
 dependencies[] = menu_attributes
