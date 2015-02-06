@@ -487,28 +487,19 @@ function drupaldrop_install() {
 
 function drupladrop_create_content($dir = 'content', $ext = 'content', $account = NULL) {  
   $path = dirname(__FILE__);
-  //$files = file_scan_directory($path . '/' . $dir, "\.${ext}$");
-  //$files = file_scan_directory($path . '/' . $dir, '/\.${ext}$/');
-  //$files = file_scan_directory($path . '/' . $dir, '/.*\.${ext}$/');
-   $files = file_scan_directory($path . '/' . $dir, '/.*\.content$/');
-   
-   print "Files:";
-   print_r($files);
   
+   $files = file_scan_directory($path . '/' . $dir, '/.*\.content$/');
+      
   asort($files);
 
   foreach ($files as $file) {
-    $node = array();
-    ob_start();
-    include $file->filename;
-    ob_end_clean();
-
+    
+    print 'Try importing: '.$path.'/'.$dir.'/'.$file->filename;
+    
 	install_node_export_import_from_file($path.'/'.$dir.'/'.$file->filename);
     
     print "Node ".$file->filename." imported";
     
-    
-    node_save($node);
   }
 }
 
