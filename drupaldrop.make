@@ -28,6 +28,7 @@ projects[tablefield][subdir] = content_modules
 projects[ace_editor][subdir] = content_modules
 projects[node_export][subdir] = content_modules
 projects[uuid][subdir] = content_modules
+projects[markdown][subdir] = content_modules
 
 ;Menu Modules
 projects[menu_attributes][subdir] = menu_modules

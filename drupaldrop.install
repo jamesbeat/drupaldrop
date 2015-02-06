@@ -462,7 +462,13 @@ function drupaldrop_install() {
 
 function drupladrop_create_content($dir = 'content', $ext = 'content', $account = NULL) {  
   $path = dirname(__FILE__);
-  $files = file_scan_directory($path . '/' . $dir, "~.${ext}$");
+  //$files = file_scan_directory($path . '/' . $dir, "\.${ext}$");
+  $files = file_scan_directory($path . '/' . $dir, '/\.${ext}$/');
+  //$files = file_scan_directory($path . '/' . $dir, '/.*\.${ext}$/');
+  
+   
+  
+  
   asort($files);
 
   foreach ($files as $file) {
