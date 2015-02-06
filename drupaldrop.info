@@ -44,6 +44,7 @@ dependencies[] = insert_block
 dependencies[] = references
 dependencies[] = tablefield
 dependencies[] = ace_editor
+dependencies[] = node_export
 
 ;Menu Modules
 dependencies[] = menu_attributes

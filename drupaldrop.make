@@ -26,6 +26,7 @@ projects[insert_block][subdir] = content_modules
 projects[references][subdir] = content_modules
 projects[tablefield][subdir] = content_modules
 projects[ace_editor][subdir] = content_modules
+projects[node_export][subdir] = content_modules
 
 ;Menu Modules
 projects[menu_attributes][subdir] = menu_modules
