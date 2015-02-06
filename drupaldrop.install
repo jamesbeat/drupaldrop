@@ -416,14 +416,7 @@ function drupaldrop_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
     
-    
-  //grant permission for text format markdown to admin
-  db_insert('role_permission')->fields(array(
-    'rid' => $admin_role->rid,
-    'permission' => 'use text format markdown',
-    'module' => 'filter'
-  ))->execute();
-  
+   
 
   // Create a Home link in the main menu.
   $item = array(
