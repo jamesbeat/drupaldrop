@@ -32,6 +32,7 @@ Assuming you already have XAMPP and drush setup and running:
 ## Preparations
 
 ### Install XAMPP
+XAMPP is a program that installs an apache server, MySQL Server and FTP Server in easy to maintain package on your system. So you can do all of your development on your local machine.
 
 1. Install [XAMPP](https://www.apachefriends.org/index.html) on your local machine
 2. Make XAMPP a bit more secure, so only you can access its databases
@@ -66,6 +67,7 @@ Assuming you already have XAMPP and drush setup and running:
 ---
 
 ### Install Drush
+Drush is he swiss army knife of Drupal development. Almost any administrative task can be done without even touching a browser window. If you're still clicking your way through Drupals' backend, take some time and have a look at it. You will never want to go back! 
 
 1. First install Composer globally. Open terminal and type:
 

@@ -11,7 +11,7 @@
  *
  * @see system_install()
  */
-function standard_install() {
+function drupaldrop_install() {
   // Add text formats.
   $filtered_html_format = array(
     'format' => 'filtered_html',
@@ -454,9 +454,29 @@ function standard_install() {
 	
 	variable_set('file_public_path', conf_path() . '/files');
 	variable_set('file_private_path', conf_path() . '/files/private');
-	variable_set('file_temp_path', conf_path() . '/files/private');
+	variable_set('file_temporary_path', conf_path() . '/tmp');
+	
+	
+	drupladrop_create_content();
 }
 
+function drupladrop_create_content($formats, $dir = 'content', $ext = 'content', $account = NULL) {  
+  $path = dirname(__FILE__);
+  $files = file_scan_directory($path . '/' . $dir, "\.${ext}$");
+  asort($files);
 
+  foreach ($files as $file) {
+    $node = array();
+    ob_start();
+    include $file->filename;
+    ob_end_clean();
+
+    $node = (object) $node;
+    $node->uid = $account ? $account->uid : 1;
+    $node->format = $formats['Full HTML'];
+    $node->field_body[0]['format'] = $formats['Full HTML'];
+    node_save($node);
+  }
+}
 
 ?>
