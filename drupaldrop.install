@@ -485,52 +485,44 @@ function drupaldrop_install() {
 	drupladrop_create_content();
 }
 
-function drupladrop_create_content($dir = 'content', $ext = 'content', $account = NULL) {  
+function drupladrop_create_content($dir = 'content', $ext = 'html', $account = NULL) {  
   $path = dirname(__FILE__);
   
-   $files = file_scan_directory($path . '/' . $dir, '/.*\.content$/');
+   $files = file_scan_directory($path . '/' . $dir, '/.*\.html$/');
       
-  asort($files);
-  /*
+   asort($files);
+ 
   foreach ($files as $file) {
     
     print 'Try importing: '.$path.'/'.$dir.'/'.$file->filename;
     
-	install_node_export_import_from_file($path.'/'.$dir.'/'.$file->filename);
+	$title = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file->filename);
+	$body = file_get_contents($path.'/'.$dir.'/'.$file->filename);
+	
+	drupladrop_create_node($title, $body);
     
     print "Node ".$file->filename." imported";
     
   }
-  */
-  /*
-  foreach ($files as $file) {
-    $node = array();
-    ob_start();
-    include $file->filename;
-    ob_end_clean();
+  
+  if(!empty($files)){
+	  variable_set('site_frontpage', 'node/1');
+  }
+     	  		
+}
 
-    $node = (object) $node;
-    $node->uid = $account ? $account->uid : 1;
-    $node->format = $formats['Full HTML'];
-    $node->field_body[0]['format'] = $formats['Full HTML'];
-    node_save($node);
-  
-  
-  	}
-  	*/
-  	
-  	$bodytext = "<h1>Welcome to your New Site</h1>";
+function drupladrop_create_node($title, $body){
 
 	$node = new stdClass(); // Create a new node object
 	$node->type = "article"; // Or page, or whatever content type you like
 	node_object_prepare($node); // Set some default values
 		
-	$node->title    = "Demo";
+	$node->title    = $title;
 	$node->language = LANGUAGE_NONE; // Or e.g. 'en' if locale is enabled
 	
 	$node->uid = 1; // UID of the author of the node; or use $node->name
 	
-	$node->body[$node->language][0]['value']   = $bodytext;
+	$node->body[$node->language][0]['value']   = $body;
 	$node->body[$node->language][0]['summary'] = text_summary($bodytext);
 	$node->body[$node->language][0]['format']  = 'full_html';
 	
@@ -542,7 +534,7 @@ function drupladrop_create_content($dir = 'content', $ext = 'content', $account 
 	    node_save($node);
 	    echo "Node with nid " . $node->nid . " saved!\n";
 	}
-	
+
 }
 
 ?>
