@@ -496,11 +496,26 @@ function drupladrop_create_content($dir = 'content', $ext = 'content', $account 
     
     print 'Try importing: '.$path.'/'.$dir.'/'.$file->filename;
     
-	install_node_export_import_from_file($path.'/'.$dir.'/'.$file->filename);
+	//install_node_export_import_from_file($path.'/'.$dir.'/'.$file->filename);
     
     print "Node ".$file->filename." imported";
     
   }
+  
+  foreach ($files as $file) {
+    $node = array();
+    ob_start();
+    include $file->filename;
+    ob_end_clean();
+
+    $node = (object) $node;
+    $node->uid = $account ? $account->uid : 1;
+    $node->format = 'Full HTML';
+    $node->field_body[0]['format'] = 'Full HTML';
+    node_save($node);
+  }
+  
+  
 }
 
 ?>
