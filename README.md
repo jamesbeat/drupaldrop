@@ -1,5 +1,7 @@
 # drupaldrop – quick local Drupal setup
 
+> Note: This thing is under Development!
+
 ## What?
 
 This is a version controlled [Drupal 7](http://www.drupal.org) installation profile that can be installed on your local OSX Machine.
@@ -146,5 +148,5 @@ Start by cloning this repo and make changes to the following files:
 
 *themes/drop* This is a minimal theme based on *basic* theme, making use of [SASS](http://sass-lang.com/) and  [Bourbon Neat](http://neat.bourbon.io/)
 
-
+*content/* You can drop html files in here that will get imported as nodes.
 

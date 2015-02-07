@@ -26,11 +26,7 @@ projects[insert_block][subdir] = content_modules
 projects[references][subdir] = content_modules
 projects[tablefield][subdir] = content_modules
 projects[ace_editor][subdir] = content_modules
-projects[node_export][subdir] = content_modules
-projects[uuid][subdir] = content_modules
 projects[markdown][subdir] = content_modules
-
-
 
 ;Menu Modules
 projects[menu_attributes][subdir] = menu_modules
@@ -62,8 +58,7 @@ projects[module_filter][subdir] = admin_modules
 projects[google_analytics][subdir] = admin_modules
 projects[security_review][subdir] = admin_modules
 projects[devel][subdir] = admin_modules
-; projects[feeds][subdir] = admin_modules
-; projects[job_scheduler][subdir] = admin_modules
+
 
 ; Multilingual modules.
 projects[i18n][subdir] = language_modules

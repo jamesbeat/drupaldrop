@@ -232,6 +232,7 @@ function drupaldrop_install() {
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
+      'comment' => 0,
     ),
     array(
       'type' => 'article',
@@ -450,7 +451,7 @@ function drupaldrop_install() {
   variable_set('user_picture_style', 'thumbnail');
 
   // Allow visitor account creation with administrative approval.
- variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
+  variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
 
  
   variable_set('admin_theme', 'seven');
@@ -479,9 +480,8 @@ function drupaldrop_install() {
 	
 	variable_set('file_public_path', conf_path() . '/files');
 	variable_set('file_private_path', conf_path() . '/files/private');
-	variable_set('file_temporary_path', conf_path() . 'tmp');
-	
-	
+	variable_set('file_temporary_path', '/tmp');
+		
 	drupladrop_create_content();
 }
 
@@ -499,7 +499,7 @@ function drupladrop_create_content($dir = 'content', $ext = 'html', $account = N
 	$title = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file->filename);
 	$body = file_get_contents($path.'/'.$dir.'/'.$file->filename);
 	
-	drupladrop_create_node($title, $body);
+	drupladrop_create_node('page', $title, $body);
     
     print "Node ".$file->filename." imported";
     
@@ -511,10 +511,10 @@ function drupladrop_create_content($dir = 'content', $ext = 'html', $account = N
      	  		
 }
 
-function drupladrop_create_node($title, $body){
+function drupladrop_create_node($type, $title, $body){
 
 	$node = new stdClass(); // Create a new node object
-	$node->type = "article"; // Or page, or whatever content type you like
+	$node->type = $type; // Or page, or whatever content type you like
 	node_object_prepare($node); // Set some default values
 		
 	$node->title    = $title;

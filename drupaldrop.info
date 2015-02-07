@@ -22,8 +22,6 @@ dependencies[] = node_reference
 dependencies[] = user_reference
 dependencies[] = rdf
 dependencies[] = taxonomy
-; dependencies[] = feeds
-; dependencies[] = job_scheduler
 
 dependencies[] = ctools
 dependencies[] = ds
@@ -46,8 +44,6 @@ dependencies[] = insert_block
 dependencies[] = references
 dependencies[] = tablefield
 dependencies[] = ace_editor
-dependencies[] = node_export
-dependencies[] = uuid
 dependencies[] = markdown
 
 ;Menu Modules
