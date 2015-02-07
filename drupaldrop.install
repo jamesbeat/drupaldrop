@@ -491,17 +491,18 @@ function drupladrop_create_content($dir = 'content', $ext = 'content', $account 
    $files = file_scan_directory($path . '/' . $dir, '/.*\.content$/');
       
   asort($files);
-
+  /*
   foreach ($files as $file) {
     
     print 'Try importing: '.$path.'/'.$dir.'/'.$file->filename;
     
-	//install_node_export_import_from_file($path.'/'.$dir.'/'.$file->filename);
+	install_node_export_import_from_file($path.'/'.$dir.'/'.$file->filename);
     
     print "Node ".$file->filename." imported";
     
   }
-  
+  */
+  /*
   foreach ($files as $file) {
     $node = array();
     ob_start();
@@ -510,12 +511,38 @@ function drupladrop_create_content($dir = 'content', $ext = 'content', $account 
 
     $node = (object) $node;
     $node->uid = $account ? $account->uid : 1;
-    $node->format = 'Full HTML';
-    $node->field_body[0]['format'] = 'Full HTML';
+    $node->format = $formats['Full HTML'];
+    $node->field_body[0]['format'] = $formats['Full HTML'];
     node_save($node);
-  }
   
   
+  	}
+  	*/
+  	
+  	$bodytext = "<h1>Welcome to your New Site</h1>";
+
+	$node = new stdClass(); // Create a new node object
+	$node->type = "article"; // Or page, or whatever content type you like
+	node_object_prepare($node); // Set some default values
+		
+	$node->title    = "Demo";
+	$node->language = LANGUAGE_NONE; // Or e.g. 'en' if locale is enabled
+	
+	$node->uid = 1; // UID of the author of the node; or use $node->name
+	
+	$node->body[$node->language][0]['value']   = $bodytext;
+	$node->body[$node->language][0]['summary'] = text_summary($bodytext);
+	$node->body[$node->language][0]['format']  = 'full_html';
+	
+	// I prefer using pathauto, which would override the below path
+	$path = 'demo';
+	$node->path = array('alias' => $path);
+	
+	if($node = node_submit($node)) { // Prepare node for saving
+	    node_save($node);
+	    echo "Node with nid " . $node->nid . " saved!\n";
+	}
+	
 }
 
 ?>
