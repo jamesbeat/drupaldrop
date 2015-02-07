@@ -82,4 +82,4 @@ $ECHO "-------------- YOUR KEYS  -----------------"
 drush uli --uri=http://$MyHOST/$dirName
 
 $ECHO "-------------- CLEANUP -----------------" 
-rm –f INSTALL.mysql.txt INSTALL.pgsql.txt INSTALL.sqlite.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt UPGRADE.txt README.txt install.config install.sh drupaldrop.make
+rm –f INSTALL.mysql.txt INSTALL.pgsql.txt INSTALL.sqlite.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt UPGRADE.txt README.txt install.config install.sh drupaldrop.build CHANGELOG.txt COPYRIGHT.txt
