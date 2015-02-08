@@ -68,7 +68,14 @@ projects[language_switcher][subdir] = language_modules
 
 
 ; THEMES
+projects[ember][type] = theme
 projects[ember]
+projects[ember][destination] = themes/ember
+
+projects[drop][type] = theme
+projects[drop][download][type] = git
+projects[drop][download][url] = https://github.com/jamesbeat/drop.git
+projects[drop][destination] = themes/drop
 
 ;Libraries
 libraries[ace][download][type] = file
@@ -80,8 +87,8 @@ libraries[jquery.cycle][download][url] = http://malsup.github.io/jquery.cycle.al
 ; libraries[modernizr][download][type] = file
 ; libraries[modernizr][download][url] = http://modernizr.com/downloads/modernizr-latest.js
 
-libraries[emogrifier][download][type] = file
-libraries[emogrifier][download][url] = https://github.com/jjriv/emogrifier/archive/master.zip
+; libraries[emogrifier][download][type] = file
+; libraries[emogrifier][download][url] = https://github.com/jjriv/emogrifier/archive/master.zip
 
 
 ; Load some translations.

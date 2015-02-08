@@ -68,18 +68,40 @@ function drupaldrop_install() {
   $full_html_format = (object) $full_html_format;
   filter_format_save($full_html_format);
   
+  $plain_html_format = array(
+    'format' => 'plain_html',
+    'name' => 'Plain HTML',
+    'weight' => 2,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 0,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 1,
+        'status' => 0,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 0,
+      ),
+    ),
+  );
+  $plain_html_format = (object) $plain_html_format;
+  filter_format_save($plain_html_format);
+
+  
   // Add text formats.
   $markdown_format = array(
     'format' => 'markdown',
     'name' => 'Markdown',
-    'weight' => 0,
+    'weight' => 3,
     'filters' => array(
       'filter_markdown' => array( // Markdown filter.
         'weight' => 0,
-        'status' => 1,
-      ),
-      'filter_url' => array( // URL filter.
-        'weight' => 1,
         'status' => 1,
       ),
     ),
@@ -244,12 +266,21 @@ function drupaldrop_install() {
       'locked' => 0,
     ),
   );
+  
 
   foreach ($types as $type) {
     $type = node_type_set_defaults($type);
     node_type_save($type);
     node_add_body_field($type);
   }
+  
+  // NODE TYPE OPTIONS 
+  
+  variable_set('node_options_page', array('status'));
+  // hide comments for this node
+  variable_set('comment_page', 'COMMENT_NODE_HIDDEN');
+  // Hide date and author information
+  variable_set('node_submitted_page', FALSE);
 
   // Insert default pre-defined RDF mapping into the database.
   $rdf_mappings = array(
@@ -532,8 +563,18 @@ function drupladrop_create_node($type, $title, $body){
 	if($node = node_submit($node)) { // Prepare node for saving
 	    node_save($node);
 	    echo "Node with nid " . $node->nid . " saved!\n";
+	    
+	    // Create a Menu link in the main menu.
+		  $item = array(
+		    'link_title' => $title,
+		    'link_path' => 'node/'.$node->nid,
+		    'menu_name' => 'main-menu',
+		  );
+		  menu_link_save($item);
+	    
 	}
-
+	
+	
 }
 
 ?>
