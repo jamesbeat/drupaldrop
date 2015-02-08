@@ -69,9 +69,10 @@ projects[language_switcher][subdir] = language_modules
 
 ; THEMES
 
-projects[drop][type] = theme
+projects[drop][type] = module
 projects[drop][download][type] = git
 projects[drop][download][url] = https://github.com/jamesbeat/drop.git
+projects[drop][download][branch] = "master"
 projects[drop][destination] = themes
 
 ;Libraries
