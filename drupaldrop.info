@@ -59,19 +59,19 @@ dependencies[] = views_bulk_operations
 dependencies[] = views_php
 
 ;Registration
-dependencies[] = registration
-dependencies[] = registration_views
-dependencies[] = registration_waitlist
-dependencies[] = registration_entity_access
-dependencies[] = calendar
-dependencies[] = date
-dependencies[] = location
+;dependencies[] = registration
+;dependencies[] = registration_views
+;dependencies[] = registration_waitlist
+;dependencies[] = registration_entity_access
+;dependencies[] = calendar
+;dependencies[] = date
+;dependencies[] = location
 
 ;Email
-dependencies[] = mailsystem
-dependencies[] = smtp
-dependencies[] = htmlmail
-dependencies[] = mimemail
+;dependencies[] = mailsystem
+;dependencies[] = smtp
+;dependencies[] = htmlmail
+;dependencies[] = mimemail
 
 ;Admin Modules
 dependencies[] = admin_menu

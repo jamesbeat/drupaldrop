@@ -2,9 +2,6 @@ core = 7.x
 api = 2
 projects[] = drupal
 
-
-Google_analytics, Fallback_language_negotation, Drop
-
 ;Common modules.
 projects[ctools][subdir] = common_modules
 projects[ds][subdir] = common_modules
@@ -40,16 +37,16 @@ projects[views_bulk_operations][subdir] = views_modules
 projects[views_php][subdir] = views_modules
 
 ;Registration
-projects[registration][subdir] = registration_modules
-projects[calendar][subdir] = registration_modules
-projects[date][subdir] = registration_modules
-projects[location][subdir] = registration_modules
+;projects[registration][subdir] = registration_modules
+;projects[calendar][subdir] = registration_modules
+;projects[date][subdir] = registration_modules
+;projects[location][subdir] = registration_modules
 
 ;Email
-projects[mailsystem][subdir] = mail_modules
-projects[smtp][subdir] = mail_modules
-projects[htmlmail][subdir] = mail_modules
-projects[mimemail][subdir] = mail_modules
+;projects[mailsystem][subdir] = mail_modules
+;projects[smtp][subdir] = mail_modules
+;projects[htmlmail][subdir] = mail_modules
+;projects[mimemail][subdir] = mail_modules
 
 ;Admin Modules
 projects[admin_menu][subdir] = admin_modules
@@ -74,6 +71,7 @@ projects[drop][download][type] = git
 projects[drop][download][url] = https://github.com/jamesbeat/drop.git
 projects[drop][download][branch] = "master"
 projects[drop][destination] = "themes"
+
 
 ;Libraries
 libraries[ace][download][type] = file
