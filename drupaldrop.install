@@ -483,7 +483,6 @@ function drupaldrop_install() {
 
   // Allow visitor account creation with administrative approval.
   variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
-
  
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
@@ -510,7 +509,7 @@ function drupaldrop_install() {
 		
 	variable_set('file_public_path', conf_path() . '/files');
 	variable_set('file_private_path', conf_path() . '/files/private');
-	variable_set('file_temporary_path', '/tmp');
+	variable_set('file_temporary_path', 'tmp');
 		
 	drupladrop_create_content();
 }
@@ -521,6 +520,8 @@ function drupladrop_create_content($dir = 'content', $ext = 'html', $account = N
    $files = file_scan_directory($path . '/' . $dir, '/.*\.html$/');
       
    asort($files);
+   
+   var $count = 0;
  
   foreach ($files as $file) {
     
@@ -529,9 +530,11 @@ function drupladrop_create_content($dir = 'content', $ext = 'html', $account = N
 	$title = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file->filename);
 	$body = file_get_contents($path.'/'.$dir.'/'.$file->filename);
 	
-	drupladrop_create_node('page', $title, $body);
+	drupladrop_create_node($count,'page',$title,$body);
     
     print "Node ".$file->filename." imported";
+    
+    $count+=1;
     
   }
   
@@ -541,7 +544,7 @@ function drupladrop_create_content($dir = 'content', $ext = 'html', $account = N
      	  		
 }
 
-function drupladrop_create_node($type, $title, $body){
+function drupladrop_create_node($weight, $type, $title, $body){
 
 	$node = new stdClass(); // Create a new node object
 	$node->type = $type; // Or page, or whatever content type you like
@@ -554,7 +557,7 @@ function drupladrop_create_node($type, $title, $body){
 	
 	$node->body[$node->language][0]['value']   = $body;
 	$node->body[$node->language][0]['summary'] = text_summary($body);
-	$node->body[$node->language][0]['format']  = 'full_html';
+	$node->body[$node->language][0]['format']  = 'plain_html';
 	
 	// I prefer using pathauto, which would override the below path
 	$path = 'demo';
@@ -569,6 +572,7 @@ function drupladrop_create_node($type, $title, $body){
 		    'link_title' => $title,
 		    'link_path' => 'node/'.$node->nid,
 		    'menu_name' => 'main-menu',
+		    'weight' => $weight,
 		  );
 		  menu_link_save($item);
 	    

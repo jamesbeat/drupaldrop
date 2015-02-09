@@ -43,8 +43,11 @@ dependencies[] = insert
 dependencies[] = insert_block
 dependencies[] = references
 dependencies[] = tablefield
-dependencies[] = ace_editor
+; dependencies[] = ace_editor
 dependencies[] = markdown
+dependencies[] = ajax_markup
+dependencies[] = bueditor
+dependencies[] = markdowneditor
 
 ;Menu Modules
 dependencies[] = menu_attributes

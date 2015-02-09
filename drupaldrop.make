@@ -22,8 +22,12 @@ projects[insert][subdir] = content_modules
 projects[insert_block][subdir] = content_modules
 projects[references][subdir] = content_modules
 projects[tablefield][subdir] = content_modules
-projects[ace_editor][subdir] = content_modules
+; projects[ace_editor][subdir] = content_modules
 projects[markdown][subdir] = content_modules
+projects[ajax_markup][subdir] = content_modules
+projects[bueditor][subdir] = content_modules
+projects[markdowneditor][subdir] = content_modules
+
 
 ;Menu Modules
 projects[menu_attributes][subdir] = menu_modules
