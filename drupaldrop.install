@@ -521,7 +521,7 @@ function drupladrop_create_content($dir = 'content', $ext = 'html', $account = N
       
    asort($files);
    
-   var $count = 0;
+   $count = 0;
  
   foreach ($files as $file) {
     
