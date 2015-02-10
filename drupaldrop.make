@@ -27,7 +27,8 @@ projects[markdown][subdir] = content_modules
 projects[ajax_markup][subdir] = content_modules
 projects[bueditor][subdir] = content_modules
 projects[markdowneditor][subdir] = content_modules
-
+projects[focal_point][subdir] = content_modules
+projects[focal_point][version] = "1.0-beta1"
 
 ;Menu Modules
 projects[menu_attributes][subdir] = menu_modules
@@ -77,19 +78,27 @@ projects[drop][download][branch] = "master"
 projects[drop][destination] = "themes"
 
 
-;Libraries
-libraries[ace][download][type] = file
-libraries[ace][download][url] = https://github.com/ajaxorg/ace-builds/archive/master.zip
+; Libraries
+; libraries[ace][download][type] = file
+; libraries[ace][download][url] = https://github.com/ajaxorg/ace-builds/archive/master.zip
 
 libraries[jquery.cycle][download][type] = file
 libraries[jquery.cycle][download][url] = http://malsup.github.io/jquery.cycle.all.js
 
-; libraries[modernizr][download][type] = file
-; libraries[modernizr][download][url] = http://modernizr.com/downloads/modernizr-latest.js
-
 ; libraries[emogrifier][download][type] = file
 ; libraries[emogrifier][download][url] = https://github.com/jjriv/emogrifier/archive/master.zip
 
+libraries[snapjs][download][type] = file
+libraries[snapjs][download][url] = https://github.com/jakiestfu/Snap.js/archive/develop.zip
+
+libraries[jquery.migrate][download][type] = file
+libraries[jquery.migrate][download][url] = https://github.com/jquery/jquery-migrate/archive/master.zip
+
+libraries[jquery.scrollTo][download][type] = file
+libraries[jquery.scrollTo][download][url] = https://github.com/flesler/jquery.scrollTo/archive/master.zip
+
+libraries[jquery.focuspoint][download][type] = file
+libraries[jquery.focuspoint][download][url] = https://github.com/jonom/jquery-focuspoint/archive/master.zip
 
 ; Load some translations.
 translations[] = de

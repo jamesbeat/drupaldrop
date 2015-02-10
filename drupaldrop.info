@@ -48,6 +48,7 @@ dependencies[] = markdown
 dependencies[] = ajax_markup
 dependencies[] = bueditor
 dependencies[] = markdowneditor
+dependencies[] = focal_point
 
 ;Menu Modules
 dependencies[] = menu_attributes
