@@ -17,6 +17,25 @@ MyUSER="root"
 MyPASS="sushi"
 MyHOST="localhost"
 
+
+# $ECHO "-------------- APACHE USER INFO -----------------"
+
+# read -e -p "Enter Apache User Name: " aUserName
+# read -e -p "Enter Apache User Password: " aUserPass
+
+# Create a new example user, setting up /var/www/example as their home dir.
+# useradd -s /bin/bash -d /var/www/example -m $aUserName;
+
+# Now add that user to the Apache group. On Ubuntu/Debian this group is usually
+# called www-data, on CentOS it's usually apache.
+# usermod -a -G www-data $aUserName;
+
+# Set up a password for this user.
+# passwd $aUserPass;
+
+#login user  
+# su - $aUserName  
+
 # Start install
 $ECHO "-----------------------------------------"
 $ECHO "*"
@@ -64,6 +83,7 @@ drush language-enable $siteLocale -y
 drush language-default $siteLocale -y
 
 $ECHO "-------------- CREATE PRIVATE FILES DIR -----------------" 
+chmod 700 sites/default/files
 mkdir -p sites/default/files/private
 chmod 700 sites/default/files/private
 
