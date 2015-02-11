@@ -84,9 +84,10 @@ drush language-default $siteLocale -y
 drush l10n-update --languages=$siteLocale
 
 $ECHO "-------------- CREATE PRIVATE FILES DIR -----------------" 
-chmod 700 sites/default/files
+
+chmod 770 sites/default/files
 mkdir -p sites/default/files/private
-chmod 700 sites/default/files/private
+chmod 770 sites/default/files/private
 
 $ECHO "-------------- CRON -----------------" 
 drush cron
