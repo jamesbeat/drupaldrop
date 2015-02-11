@@ -89,7 +89,7 @@ libraries[jquery.cycle][download][url] = https://github.com/malsup/cycle.git
 ; libraries[emogrifier][download][url] = https://github.com/jjriv/emogrifier/archive/master.zip
 
 libraries[snapjs][download][type] = git
-libraries[snapjs][download][url] = https://github.com/jakiestfu/Snap.git
+libraries[snapjs][download][url] = https://github.com/jakiestfu/Snap.js.git
 
 libraries[jquery.migrate][download][type] = git
 libraries[jquery.migrate][download][url] = https://github.com/jquery/jquery-migrate.git
