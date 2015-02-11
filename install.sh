@@ -81,6 +81,7 @@ drush dl drush_language -y
 drush language-add $siteLocale -y
 drush language-enable $siteLocale -y
 drush language-default $siteLocale -y
+drush l10n-update --languages=$siteLocale
 
 $ECHO "-------------- CREATE PRIVATE FILES DIR -----------------" 
 chmod 700 sites/default/files

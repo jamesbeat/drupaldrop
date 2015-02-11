@@ -19,12 +19,11 @@ Assuming you already have XAMPP and drush setup and running:
 1. Create a new directory for the site in your local *Sites* folder
 2. Copy *drupaldrop.build*, *install.sh* and *install-example.config* in that folder
 3. Rename *install-example.config* to *install.config* and edit the settings inside this file to match your system environment.
-4. Open up Terminal and enable Root User: `$ sudo -s` (Discard the $ character, it's just a placeholder for the terminal prompt)
-5. cd to the Site directory (for exammple `cd Sites/sitename`)
-6. run the command `$ sh install.sh`
-7. You will be asked to enter some basic credentials, keep your MySQL root username and password ready.
-8. The install script now creates a new MySQL user, Database, downloads latest Drupal core, builds an installation profile from this repo, downloads modules and translations, sets up basic content types and roles, enables a starter theme and logs you into the site. 
-9. Enjoy!
+4. cd to the Site directory (for exammple `cd Sites/sitename`)
+5. run the command `$ sh install.sh`
+6. You will be asked to enter some basic credentials, keep your MySQL root username and password ready.
+7. The install script now creates a new MySQL user, Database, downloads latest Drupal core, builds an installation profile from this repo, downloads modules and translations, sets up basic content types and roles, enables a starter theme and logs you into the site. 
+8. Enjoy!
 
 > Disclaimer: Use this at your own risk. Running shell scripts can potentially do some serious damage to your system.
 > Take the time and read through the install.sh file to see what it does exactly.
@@ -132,6 +131,12 @@ export PATH
  enter *Ctrl O* and Enter to save the file and *Ctrl X* to quit the editor.
 
  Restart terminal to be sure the file takes effect.
+
+5. Tweaking
+
+ type `drush version` to see if all works fine.
+ 
+ You might need to adjust ownership of drush by executing `sudo chown -R $USER ~/.drush`
 
 
 ---
