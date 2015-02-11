@@ -83,7 +83,7 @@ projects[drop][destination] = "themes"
 ; libraries[ace][download][url] = https://github.com/ajaxorg/ace-builds/archive/master.zip
 
 libraries[jquery.cycle][download][type] = git
-libraries[jquery.cycle][download][url] = http://malsup.github.io/jquery.cycle.all.js
+libraries[jquery.cycle][download][url] = https://github.com/malsup/cycle.git
 
 ; libraries[emogrifier][download][type] = file
 ; libraries[emogrifier][download][url] = https://github.com/jjriv/emogrifier/archive/master.zip
@@ -101,4 +101,4 @@ libraries[jquery.focuspoint][download][type] = git
 libraries[jquery.focuspoint][download][url] = https://github.com/jonom/jquery-focuspoint.git
 
 ; Load some translations.
-translations[] = de
+; translations[] = de
