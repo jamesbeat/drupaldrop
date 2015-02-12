@@ -89,9 +89,33 @@ chmod 770 sites/default/files
 mkdir -p sites/default/files/private
 chmod 770 sites/default/files/private
 
+$ECHO "-------------- ALTER HTACCESS -----------------" 
+
+sed -i '' "s/# RewriteBase \//RewriteBase \/\$dirName/g" .htaccess
+
+for now in 1 
+do
+echo "# Add Media MIME Types"
+echo "AddType video/ogg .ogv"
+echo "AddType video/mp4 .mp4"
+echo "AddType video/webm .webm"
+echo "# Add File MIME Types"
+echo "AddType application/octet-stream .csv"
+echo "AddType application/octet-stream .xls"
+echo "AddType application/octet-stream .doc"
+echo "AddType application/octet-stream .pdf"
+echo "# Add webfont mime types
+echo "AddType font/eot eot
+echo "AddType font/truetype ttf
+echo "AddType font/opentype otf
+echo "AddType application/x-font-woff woff
+
+done >> .htaccess
+
 $ECHO "-------------- CRON -----------------" 
 drush cron
 drush cc all
+
 
 $ECHO "-------------- REBUILD PERMISSIONS -----------------" 
 drush php-eval 'node_access_rebuild();'

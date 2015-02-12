@@ -509,8 +509,16 @@ function drupladrop_create_node($weight, $type, $title, $body){
 	$node = new stdClass(); // Create a new node object
 	$node->type = $type; // Or page, or whatever content type you like
 	node_object_prepare($node); // Set some default values
+	
+	//split tile
+	$title_array = explode("_",$title);
+	if(sizeof($title_array) > 1){
+		$node->title = $title_array[1]$title;
+	}
+	else{
+		$node->title = $title;
+	}
 		
-	$node->title    = $title;
 	$node->language = LANGUAGE_NONE; // Or e.g. 'en' if locale is enabled
 	
 	$node->uid = 1; // UID of the author of the node; or use $node->name
