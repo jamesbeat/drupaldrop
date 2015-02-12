@@ -97,8 +97,10 @@ libraries[jquery.migrate][download][url] = https://github.com/jquery/jquery-migr
 libraries[jquery.scrollTo][download][type] = git
 libraries[jquery.scrollTo][download][url] = https://github.com/flesler/jquery.scrollTo.git
 
-libraries[jquery.focuspoint][download][type] = git
-libraries[jquery.focuspoint][download][url] = https://github.com/jonom/jquery-focuspoint.git
+libraries[jquery.focuspoint][download][type] = file
+libraries[jquery.focuspoint][download][url] = https://github.com/jonom/jquery-focuspoint/blob/master/js/jquery.focuspoint.min.js
+
+
 
 ; Load some translations.
 ; translations[] = de
