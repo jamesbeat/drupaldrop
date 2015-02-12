@@ -408,19 +408,7 @@ function drupaldrop_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
     
-   
-
-  // Create a Home link in the main menu.
-  $item = array(
-    'link_title' => st('Home'),
-    'link_path' => '<front>',
-    'menu_name' => 'main-menu',
-  );
-  menu_link_save($item);
-
-  // Update the menu router information.
-  menu_rebuild();
-
+  
   // Enable the admin theme.
   db_update('system')
     ->fields(array('status' => 1))
@@ -472,6 +460,9 @@ function drupaldrop_install() {
 	variable_set('file_temporary_path', '/tmp');
 		
 	drupladrop_create_content();
+	
+	// Update the menu router information.
+	menu_rebuild();
 }
 
 function drupladrop_create_content($dir = 'content', $ext = 'html', $account = NULL) {  
@@ -512,7 +503,7 @@ function drupladrop_create_node($weight, $type, $title, $body){
 	
 	//split tile
 	$title_array = explode("_",$title);
-	if(sizeof($title_array) > 1){
+	if(count($title_array) > 1){
 		$node->title = $title_array[1];
 	}
 	else{
@@ -537,7 +528,7 @@ function drupladrop_create_node($weight, $type, $title, $body){
 	    
 	    // Create a Menu link in the main menu.
 		  $item = array(
-		    'link_title' => $title,
+		    'link_title' => $node->title,
 		    'link_path' => 'node/'.$node->nid,
 		    'menu_name' => 'main-menu',
 		    'weight' => $weight,

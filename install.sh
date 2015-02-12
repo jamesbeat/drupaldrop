@@ -104,11 +104,11 @@ echo "AddType application/octet-stream .csv"
 echo "AddType application/octet-stream .xls"
 echo "AddType application/octet-stream .doc"
 echo "AddType application/octet-stream .pdf"
-echo "# Add webfont mime types
-echo "AddType font/eot eot
-echo "AddType font/truetype ttf
-echo "AddType font/opentype otf
-echo "AddType application/x-font-woff woff
+echo "# Add webfont mime types"
+echo "AddType font/eot eot"
+echo "AddType font/truetype ttf"
+echo "AddType font/opentype otf"
+echo "AddType application/x-font-woff woff"
 
 done >> .htaccess
 
