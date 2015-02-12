@@ -519,7 +519,7 @@ function drupladrop_create_node($weight, $type, $title, $body){
 	$node->body[$node->language][0]['format']  = 'plain_html';
 	
 	// I prefer using pathauto, which would override the below path
-	$alias = strtolower($title);
+	$alias = strtolower($node->title);
 	$node->path = array('alias' => $alias);
 	
 	if($node = node_submit($node)) { // Prepare node for saving

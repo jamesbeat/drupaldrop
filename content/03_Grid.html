@@ -1,6 +1,6 @@
 <h3>Basic Grid Examples</h3>
 
-<section class="zero">
+<section class="demo zero">
 <code>@include outer-container;</code>
   <div id="alpha" class="box">
     <code>@include span-columns(6);</code>
@@ -13,7 +13,7 @@
 
 <h3>Multiple rows</h3>
 
-<section class="first">
+<section class="demo first">
 <code>@include outer-container;</code>
   <div id="alpha" class="box">
     <code>(1)</code>
@@ -61,7 +61,7 @@
 
 <h3>Nesting columns</h3>
 
-<section class="second">
+<section class="demo second">
 <code>@include outer-container;</code>
    <div id="alpha" class="box">
     <code>@include span-columns(4);</code>
@@ -79,7 +79,7 @@
 
 <h3>Table grid</h3>
 
-<section class="third">
+<section class="demo third">
   <code>@include outer-container;</code>
   <div id="dummy" class="box">
     <code>@include fill-parent();<br>
@@ -102,7 +102,7 @@
 
 <h3>Shifting columns</h3>
 
-<section class="fourth">
+<section class="demo fourth">
   <code>@include outer-container;</code>
   <div id="alpha" class="box">
     <code>@include span-columns(6);<br>
@@ -115,7 +115,7 @@
   <code>@include outer-container;</code>
 </div>
 
-<section class="fifth">
+<section class="demo fifth">
   <div class="box">
     <pre>li.block {
   @include span-columns(3);
@@ -159,7 +159,7 @@
 
 <h3>Media Queries</h3>
 
-<section class="sixth">
+<section class="demo sixth">
 <pre>@include outer-container;
 $mobile: new-breakpoint(max-width 500px 4);
 </pre>
