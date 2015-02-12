@@ -513,7 +513,7 @@ function drupladrop_create_node($weight, $type, $title, $body){
 	//split tile
 	$title_array = explode("_",$title);
 	if(sizeof($title_array) > 1){
-		$node->title = $title_array[1]$title;
+		$node->title = $title_array[1];
 	}
 	else{
 		$node->title = $title;
