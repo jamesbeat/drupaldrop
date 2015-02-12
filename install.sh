@@ -91,7 +91,7 @@ chmod 770 sites/default/files/private
 
 $ECHO "-------------- ALTER HTACCESS -----------------" 
 
-sed -i '' "s/# RewriteBase \//RewriteBase \/\$dirName/g" .htaccess
+sed -i '' "s/# RewriteBase \//RewriteBase \/$dirName/g" .htaccess
 
 for now in 1 
 do
