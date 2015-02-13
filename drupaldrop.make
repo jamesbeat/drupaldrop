@@ -88,14 +88,8 @@ libraries[jquery.cycle][download][url] = https://github.com/malsup/cycle.git
 ; libraries[emogrifier][download][type] = file
 ; libraries[emogrifier][download][url] = https://github.com/jjriv/emogrifier/archive/master.zip
 
-libraries[snapjs][download][type] = git
-libraries[snapjs][download][url] = https://github.com/jakiestfu/Snap.js.git
-
 libraries[jquery.migrate][download][type] = git
 libraries[jquery.migrate][download][url] = https://github.com/jquery/jquery-migrate.git
-
-libraries[jquery.scrollTo][download][type] = git
-libraries[jquery.scrollTo][download][url] = https://github.com/flesler/jquery.scrollTo.git
 
 libraries[jquery.focuspoint][download][type] = git
 libraries[jquery.focuspoint][download][url] = https://github.com/jonom/jquery-focuspoint.git
