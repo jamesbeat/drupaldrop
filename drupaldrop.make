@@ -34,7 +34,7 @@ projects[focal_point][subdir] = image_modules
 projects[focal_point][version] = "1.0-beta1"
 projects[image_style_quality][subdir] = image_modules
 projects[hires_images][subdir] = image_modules
-projects[jail][subdir] = image_modules
+projects[lazyloader][subdir] = image_modules
 
 ;Menu Modules
 projects[menu_attributes][subdir] = menu_modules
@@ -100,8 +100,8 @@ libraries[jquery.migrate][download][url] = https://github.com/jquery/jquery-migr
 libraries[jquery.focuspoint][download][type] = git
 libraries[jquery.focuspoint][download][url] = https://github.com/jonom/jquery-focuspoint.git
 
-libraries[jail][download][type] = git
-libraries[jail][download][url] = https://github.com/sebarmeli/JAIL.git
+; libraries[jail][download][type] = git
+; libraries[jail][download][url] = https://github.com/sebarmeli/JAIL.git
 
 
 ; Load some translations.

@@ -54,7 +54,7 @@ dependencies[] = insert
 ;Image Modules
 dependencies[] = image_style_quality
 dependencies[] = hires_images
-dependencies[] = jail
+dependencies[] = lazyloader
 
 ;Menu Modules
 dependencies[] = menu_attributes
