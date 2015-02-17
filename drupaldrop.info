@@ -49,6 +49,12 @@ dependencies[] = ajax_markup
 dependencies[] = bueditor
 dependencies[] = markdowneditor
 dependencies[] = focal_point
+dependencies[] = insert
+
+;Image Modules
+dependencies[] = image_style_quality
+dependencies[] = hires_images
+dependencies[] = jail
 
 ;Menu Modules
 dependencies[] = menu_attributes

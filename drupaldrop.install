@@ -341,6 +341,7 @@ function drupaldrop_install() {
     ),
   );
   field_create_field($field);
+  
 
 
   // Many of the following values will be defaulted, they're included here as an illustrative examples.
@@ -388,6 +389,82 @@ function drupaldrop_install() {
     ),
   );
   field_create_instance($instance);
+  
+  
+  
+  $field = array(
+    'field_name' => 'field_images',
+    'type' => 'image',
+    'cardinality' => -1,
+    'locked' => FALSE,
+    'indexes' => array('fid' => array('fid')),
+    'settings' => array(
+      'uri_scheme' => 'public',
+      'default_image' => FALSE,
+    ),
+    'storage' => array(
+      'type' => 'field_sql_storage',
+      'settings' => array(),
+    ),
+  );
+  field_create_field($field);
+
+   $instance = array(
+    'bundle' => 'page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_images',
+    'label' => 'images',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'images',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => 'lazy',
+        'insert_default' => 'image_retina_lazy',
+        'insert_styles' => array(
+          '<all>' => '<all>',
+        ),
+        'insert_width' => 1088,
+        'preview_image_style' => 'retina_lazy',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => -3,
+    ),
+  );
+  field_create_instance($instance);
+   
+
+  return $field_bases;
 
   // Enable default permissions for system roles.
   $filtered_html_permission = filter_permission_name($filtered_html_format);
@@ -458,7 +535,9 @@ function drupaldrop_install() {
 	variable_set('file_public_path', conf_path() . '/files');
 	variable_set('file_private_path', conf_path() . '/files/private');
 	variable_set('file_temporary_path', '/tmp');
-		
+	
+	
+	drupladrop_create_imagestyles();	
 	drupladrop_create_content();
 	
 	// Update the menu router information.
@@ -538,6 +617,62 @@ function drupladrop_create_node($weight, $type, $title, $body){
 	}
 	
 	
+}
+
+function drupladrop_create_imagestyles(){
+	
+	$style = image_style_save(array('name' => 'retina','label' => 'Retina'));
+		
+	$effect_scale = array(
+        'label' => 'Skalierung',
+        'help' => 'Eine Skalierung behält das Seitenverhältnis des Originalbildes bei. Sofern nur eine Seitenlänge angegeben ist, wird die andere berechnet.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 2200,
+          'height' => '',
+          'upscale' => 1,
+        ),
+        'weight' => -10,
+        'isid' => $style['isid'],
+      );
+    image_effect_save($effect_scale);
+      
+	$effect_hires = array(
+        'label' => 'Hi-Res (x2)',
+        'help' => '<img> dimensions will be half the dimensions of the styled image.',
+        'effect callback' => 'hires_images_effect',
+        'dimensions callback' => 'hires_images_dimensions',
+        'module' => 'hires_images',
+        'name' => 'image_hires',
+        'data' => array(),
+        'weight' => -8,
+        'isid' => $style['isid'],
+    );
+    image_effect_save($effect_hires);
+    
+    $effect_quality = array(
+        'label' => 'Qualität',
+        'help' => 'Legt die Bildqualität für JPEG-Bilder fest. Sie kann Werte von 0 bis 100 annehmen, wobei größere Werte bessere Bildqualität, aber größere Dateien bedeuten.',
+        'effect callback' => '_image_style_quality_apply',
+        'form callback' => 'image_style_quality_style_form',
+        'dimensions passthrough' => TRUE,
+        'summary theme' => 'image_style_quality_summary',
+        'module' => 'image_style_quality',
+        'name' => 'image_style_quality',
+        'data' => array(
+          'quality' => 50,
+        ),
+        'weight' => -5,
+        'isid' => $style['isid'],
+      );
+	image_effect_save($effect_quality);
+
+		
 }
 
 ?>
