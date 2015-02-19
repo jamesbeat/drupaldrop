@@ -644,6 +644,7 @@ function drupladrop_create_text_formats(){
         'weight' => 10,
         'status' => 1,
       ),
+      
     ),
   );
   $full_html_format = (object) $full_html_format;
@@ -669,6 +670,7 @@ function drupladrop_create_text_formats(){
         'weight' => 10,
         'status' => 0,
       ),
+      
     ),
   );
   $plain_html_format = (object) $plain_html_format;
@@ -685,6 +687,7 @@ function drupladrop_create_text_formats(){
         'weight' => 0,
         'status' => 1,
       ),
+      
     ),
   );
   $markdown_format = (object) $markdown_format;

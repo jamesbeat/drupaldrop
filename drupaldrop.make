@@ -36,6 +36,7 @@ projects[image_style_quality][subdir] = image_modules
 projects[hires_images][subdir] = image_modules
 projects[lazyloader][subdir] = image_modules
 
+
 ;Menu Modules
 projects[menu_attributes][subdir] = menu_modules
 projects[menu_position][subdir] = menu_modules
