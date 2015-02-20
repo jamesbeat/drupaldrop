@@ -22,7 +22,7 @@ projects[insert][subdir] = content_modules
 projects[insert_block][subdir] = content_modules
 projects[references][subdir] = content_modules
 projects[tablefield][subdir] = content_modules
-projects[ace_editor][subdir] = content_modules
+; projects[ace_editor][subdir] = content_modules
 projects[markdown][subdir] = content_modules
 projects[ajax_markup][subdir] = content_modules
 ; projects[bueditor][subdir] = content_modules
@@ -34,7 +34,7 @@ projects[focal_point][subdir] = image_modules
 projects[focal_point][version] = "1.0-beta1"
 projects[image_style_quality][subdir] = image_modules
 projects[hires_images][subdir] = image_modules
-projects[jail][subdir] = image_modules
+; projects[jail][subdir] = image_modules
 
 
 ;Menu Modules

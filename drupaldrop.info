@@ -43,7 +43,7 @@ dependencies[] = insert
 dependencies[] = insert_block
 dependencies[] = references
 dependencies[] = tablefield
-dependencies[] = ace_editor
+; dependencies[] = ace_editor
 dependencies[] = markdown
 dependencies[] = ajax_markup
 ; dependencies[] = bueditor
@@ -54,7 +54,7 @@ dependencies[] = insert
 ;Image Modules
 dependencies[] = image_style_quality
 dependencies[] = hires_images
-dependencies[] = jail
+;dependencies[] = jail
 
 ;Menu Modules
 dependencies[] = menu_attributes
