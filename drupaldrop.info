@@ -43,18 +43,18 @@ dependencies[] = insert
 dependencies[] = insert_block
 dependencies[] = references
 dependencies[] = tablefield
-; dependencies[] = ace_editor
+dependencies[] = ace_editor
 dependencies[] = markdown
 dependencies[] = ajax_markup
-dependencies[] = bueditor
-dependencies[] = markdowneditor
+; dependencies[] = bueditor
+; dependencies[] = markdowneditor
 dependencies[] = focal_point
 dependencies[] = insert
 
 ;Image Modules
 dependencies[] = image_style_quality
 dependencies[] = hires_images
-dependencies[] = lazyloader
+dependencies[] = jail
 
 ;Menu Modules
 dependencies[] = menu_attributes
@@ -96,3 +96,4 @@ dependencies[] = i18nviews
 dependencies[] = l10n_update
 dependencies[] = language_switcher
 
+settings[drop_lazy_enabled] = TRUE
