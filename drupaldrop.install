@@ -44,6 +44,7 @@ function drupaldrop_install() {
 	variable_set('theme_default', 'drop');
 	variable_set('admin_theme', 'seven');
 	
+		
 	variable_set("clean_url", 0);
 	
 	variable_set("date_default_timezone", 'Europe/Berlin');
@@ -197,6 +198,25 @@ function drupaldrop_enable_theme(){
     $query->values($block);
   }
   $query->execute();
+  
+    
+  $enable = array(
+    'theme_default' => $default_theme,
+    'admin_theme' => $admin_theme,
+    //'zen'
+  );
+  theme_enable($enable);
+
+  foreach ($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+  
+  // Disable the default Bartik theme
+  theme_disable(array('bartik'));
+
+
 
 }
 
