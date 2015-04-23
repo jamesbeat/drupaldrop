@@ -91,7 +91,7 @@ chmod 770 sites/default/files/private
 
 $ECHO "-------------- ALTER HTACCESS -----------------" 
 
-sed -i '' "s/# RewriteBase \//RewriteBase \/$dirName/g" .htaccess
+sed -i -e "s/# RewriteBase \//RewriteBase \/$dirName/g" .htaccess
 
 for now in 1 
 do
@@ -128,4 +128,4 @@ $ECHO "-------------- YOUR KEYS  -----------------"
 drush uli --uri=http://$MyHOST/$dirName
 
 $ECHO "-------------- CLEANUP -----------------" 
-rm –f INSTALL.mysql.txt INSTALL.pgsql.txt INSTALL.sqlite.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt UPGRADE.txt README.txt install.config install.sh drupaldrop.build CHANGELOG.txt COPYRIGHT.txt
+rm -f INSTALL.mysql.txt INSTALL.pgsql.txt INSTALL.sqlite.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt UPGRADE.txt README.txt install.config install.sh drupaldrop.build CHANGELOG.txt COPYRIGHT.txt
