@@ -100,6 +100,15 @@ function drupaldrop_install() {
 	drupaldrop_enable_theme();
 	drupladrop_create_content();
 	
+	 // Create a Menu link for STyleguide in the main menu.
+	  $guide = array(
+	    'link_title' => 'Styleguide',
+	    'link_path' => '/admin/appearance/styleguide',
+	    'menu_name' => 'main-menu',
+	    'weight' => 1,
+	  );
+	  menu_link_save($guide);
+	
 	// Update the menu router information.
 	menu_rebuild();
 }

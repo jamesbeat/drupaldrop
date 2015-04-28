@@ -28,6 +28,7 @@ projects[ajax_markup][subdir] = content_modules
 ; projects[bueditor][subdir] = content_modules
 ; projects[markdowneditor][subdir] = content_modules
 projects[insert][subdir] = content_modules
+projects[styleguide][subdir] = content_modules
 
 ;Image Modules
 projects[focal_point][subdir] = image_modules

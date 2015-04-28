@@ -50,6 +50,7 @@ dependencies[] = ajax_markup
 ; dependencies[] = markdowneditor
 dependencies[] = focal_point
 dependencies[] = insert
+dependencies[] = styleguide
 
 ;Image Modules
 dependencies[] = image_style_quality
