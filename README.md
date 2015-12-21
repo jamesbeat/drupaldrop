@@ -63,7 +63,13 @@ XAMPP is a program that installs an apache server, MySQL Server and FTP Server i
   Copy folder *XAMPP/htdocs/xampp* to your *Sites* Folder so you can still access ist content.
   
   Typing *localhost* in your browser should now list all directories inside your *Sites* folder
-
+  
+  You might want to add Xampp's Apache user to your groups by
+  
+  ```
+  sudo dseditgroup -o edit -a {USERNAME} -t user daemon
+  sudo dseditgroup -o edit -a daemon -t user staff
+```
 
 ---
 
